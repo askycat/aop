@@ -1233,9 +1233,7 @@ $(function ($) {
             document.querySelector("#userStake7").innerText = (info.userStake7 / 1e18).toFixed(4);
             document.querySelector("#userStake15").innerText = (info.userStake15 / 1e18).toFixed(4);
             document.querySelector("#userStake30").innerText = (info.userStake30 / 1e18).toFixed(4);
-            var collectTime = (info.collectTime / 1e18);
-
-            getCountDown(collectTime);
+            getCountDown(info.collectTime);
         }, 3000);
 
 
