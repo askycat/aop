@@ -77,12 +77,12 @@ $(function ($) {
         AOP = new web3.eth.Contract(AOPAbi, contractAddress);
 
         setInterval(async () => {
-            var info = await AOP.methods.allInfo(account[0]).call()
+            var info = await AOP.methods.allInfo().call()
             
             document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
-            document.querySelector("#totalBurn").innerText = ((info.userStake7 + info.userStake15 + info.userStake30) / 1e18).toFixed(4);
-            document.querySelector("#userTotalStaked").innerText = (info.userTotalStaked / 1e18).toFixed(4);
+            document.querySelector("#totalBurn").innerText = (info.tokenTokenBurn/ 1e18).toFixed(4);
+            document.querySelector("#userTotalStaked").innerText = ((info.userStake7 + info.userStake15 + info.userStake30) / 1e18).toFixed(4);
             document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
             document.querySelector("#userStake7").innerText = (info.userStake7 / 1e18).toFixed(4);
             document.querySelector("#userStake15").innerText = (info.userStake15 / 1e18).toFixed(4);
