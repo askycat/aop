@@ -1144,6 +1144,12 @@ $(function ($) {
 
     dayType = $(".dayType.active").attr("day");
 
+     $(".dayType").on("click", function () {
+        $(".dayType").removeClass("active");
+        $(this).addClass("active");
+        dayType = $(this).attr("day");
+    });
+  
     $("#stake").on("click", function () {
         var stakeAmount = document.querySelector('#stakeAmount').value;
         if (stakeAmount < 50000) { alert("min amount:50000"); return; }
