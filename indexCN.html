@@ -724,7 +724,7 @@ $(function ($) {
         setInterval(async () => {
             var info = await AOP.methods.allInfo(account[0]).call()
             var balance = await AOP.methods.balanceOf(account[0]).call()
-            var stakedOfPools=  await AOP.methods.stakedOfPools().call()
+            var stakedOfPools=  await AOP.methods.stakedOfPool().call()
             document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
             document.querySelector("#totalBurn").innerText = (balance/ 1e18).toFixed(4);
