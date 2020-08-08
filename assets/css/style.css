@@ -3159,11 +3159,13 @@ span.statcounter {
 .dayType:hover{
 	border-style: double !important;
 	cursor: pointer;
+	background: #142a40
 }
 
 .dayType.active{
 
 	border-style: double !important;
+	background: #142a40
 }
 
 .col-xs-1-5,
