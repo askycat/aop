@@ -404,56 +404,61 @@
       <div class="row">
         <div class="col-lg-7 col-md-12 col-sm-12 text_md_center">
           <div class="title_light">
-            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Stake Pools</h2>
+            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Pools</h2>
           </div>
           <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.1s">
-                <h6>Total Staked :</h6>
-                <p id="totalStaked" style="font-size:larger;">0.0000</p>
+            <div class="col-md-12 hidden">
+              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                <h6>TOTAL STAKED: <span id="totalStaked" style="font-size:larger;">0.0000</span></h6>
+                <div class="row p-3">
+                  <div class="col-lg-4  p-3 dayType border active" day="7">
+                    7days:<p id="userStake7" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4  p-3 dayType border " day="15">
+                    15days:<p id="userStake15" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4 p-3 dayType border" day="30">
+                    30days:<p id="userStake30" style="font-size:larger;">0.0000</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                <h6>Total Dividends :</h6>
-                <p id="totalDividends" style="font-size:larger;">0.0000</p>
+            <div class="col-md-12 hidden">
+              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                <h6>TOTAL DIVIDENDS: <span id="totalDividends" style="font-size:larger;">0.0000</span></h6>
+                <div class="row p-3">
+                  <div class="col-lg-4  p-3 dayType border active" day="7">
+                    7days:<p id="userStake7" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4  p-3 dayType border " day="15">
+                    15days:<p id="userStake15" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4 p-3 dayType border" day="30">
+                    30days:<p id="userStake30" style="font-size:larger;">0.0000</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                <h6>Balance:</h6>
+                <h6>balance:</h6>
                 <p id="balance" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>You staked :</h6>
-                <p id="userTotalStaked" style="font-size:larger;">0.0000</p>
+                <h6>YOU STAKED :</h6>
+                <p id="userStaked" style="font-size:larger;">0.0000</p>
               </div>
             </div>
-          
-            <div class="col-md-12 hidden">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>Days:</h6>
-              <div class="row p-3">
-                <div class="col-lg-4  p-3 dayType" day="7" >
-                  7day:<p  id="userStake7" style="font-size:larger;">0.0000</p>
-                </div> 
-                <div class="col-lg-4  p-3 dayType active" day="15">
-                  15day:<p id="userStake15" style="font-size:larger;">0.0000</p>
-                </div>
 
-                <div class="col-lg-4 p-3 dayType"  day="30">
-                  30day:<p  id="userStake30" style="font-size:larger;">0.0000</p>
-                </div>
-              </div>
-              </div>
-            </div>
+
             <div class="col-md-6 col-sm-12">
               <div class="newsletter_form newslattter_small">
                 <form class="animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                   <div class="outline_input"><input type="number" style="font-size: large;" id="stakeAmount" /></div>
-                  <button type="button"  id="stake" title="Subscribe" class="btn btn-default" name="submit" value="Submit">Stake
+                  <button type="button" id="stake" title="Subscribe" class="btn btn-default" name="submit"
+                    value="Submit">stake
                   </button>
                 </form>
               </div>
@@ -461,8 +466,9 @@
             <div class="col-md-6 col-sm-12">
               <div class="newsletter_form newslattter_small">
                 <form class="animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                  <div class="outline_input"><input type="number" style="font-size: large;" id="unStakeAmount"/></div>
-                  <button  type="button"  id="unstake"  title="Subscribe" class="btn btn-default" name="submit" value="Submit">Unstake
+                  <div class="outline_input"><input type="number" style="font-size: large;" id="unStakeAmount" /></div>
+                  <button type="button" id="unstake" title="Subscribe" class="btn btn-default" name="submit"
+                    value="Submit">unstake
                   </button>
                 </form>
               </div>
@@ -471,16 +477,16 @@
         </div>
         <div class="col-lg-5 offset-lg-0 col-md-8 offset-md-2 text_md_center res_md_mt_30">
           <div class="title_light">
-            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Dividends</h2>
+            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">奖励</h2>
           </div>
           <div class="tk_countdown text-center animation countdown_shape" data-animation="fadeInUp"
-            data-animation-delay="0.1s" style="margin-top: -20px;">
+            data-animation-delay="0.1s" style="margin-top: -3px;">
             <div class="tk_counter_inner">
               <h1 id="userdividends" class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
-                style="color: blanchedalmond;padding: 0rem;">0.0000</h1>
-              <a href="javascript:void(0)" id="collect" class="btn btn-default">Rewards</a>
-              <br/>
-             <span id="countDown1">&nbsp;</span>
+                style="color: blanchedalmond;padding: 5rem;">0.0000</h1>
+              <a href="javascript:void(0)" id="collect" class="btn btn-default">领取</a>
+              <br />
+              <span id="countDown1">&nbsp;</span>
             </div>
           </div>
         </div>
@@ -634,15 +640,18 @@
 </body>
 <script>
 var dayType;
+  var userStakes = [];
 
-$(function ($) {
+  $(function ($) {
     $("#collect").addClass("disabled");
     dayType = $(".dayType.active").attr("day");
 
-     $(".dayType").on("click", function () {
-        $(".dayType").removeClass("active");
-        $(this).addClass("active");
-        dayType = $(this).attr("day");
+    $(".dayType").on("click", function () {
+      $(".dayType").removeClass("active");
+      
+      dayType = $(this).attr("day");
+      $(`[day="${dayType}"]`).addClass("active");
+      $("#userStaked").val(userStakes[dayType]);
     });
   
     $("#stake").on("click", function () {
@@ -698,50 +707,63 @@ $(function ($) {
 
 
     var contractAddress = '0x724355af88cc04fd7aa049832d826c32349d2c2e';
-    var AOPAbi = [ { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Burn", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Collect", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Stake", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Tax", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" } ], "name": "Unstake", "type": "event" }, { "constant": true, "inputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "name": "SHARE_DIVIDENDS", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" } ], "name": "allInfo", "outputs": [ { "internalType": "uint256", "name": "tokenTotalSupply", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalStaked", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalDividends", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalBurn", "type": "uint256" }, { "internalType": "uint256", "name": "userStake7", "type": "uint256" }, { "internalType": "uint256", "name": "userStake15", "type": "uint256" }, { "internalType": "uint256", "name": "userStake30", "type": "uint256" }, { "internalType": "uint256", "name": "userDividends", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime7", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime15", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime30", "type": "uint256" }, { "internalType": "uint256", "name": "collectTime", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "address", "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "address", "name": "_spender", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" } ], "name": "approve", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" } ], "name": "balanceOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "collect", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" } ], "name": "collectTimeOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "dividend", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" } ], "name": "dividendsOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "dividendsOfPool", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "info", "outputs": [ { "internalType": "uint256", "name": "totalSupply", "type": "uint256" }, { "internalType": "uint256", "name": "totalStaked", "type": "uint256" }, { "internalType": "address", "name": "dev", "type": "address" }, { "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "eater", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "uint256", "name": "_tokens", "type": "uint256" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" } ], "name": "stake", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "stakeCount", "outputs": [ { "internalType": "address[]", "name": "", "type": "address[]" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" } ], "name": "stakedOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "stakedOfPool", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalBurn", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalDev", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalDividends", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalStaked", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" } ], "name": "transfer", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "address", "name": "_from", "type": "address" }, { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "uint256", "name": "_tokens", "type": "uint256" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" } ], "name": "unstake", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" } ]
+    var AOPAbi = [{ "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Burn", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Collect", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Stake", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Tax", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Unstake", "type": "event" }, { "constant": true, "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "name": "SHARE_DIVIDENDS", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }], "name": "allInfo", "outputs": [{ "internalType": "uint256", "name": "tokenTotalSupply", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalStaked", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalDividends", "type": "uint256" }, { "internalType": "uint256", "name": "tokenTotalBurn", "type": "uint256" }, { "internalType": "uint256", "name": "userStake7", "type": "uint256" }, { "internalType": "uint256", "name": "userStake15", "type": "uint256" }, { "internalType": "uint256", "name": "userStake30", "type": "uint256" }, { "internalType": "uint256", "name": "userDividends", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime7", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime15", "type": "uint256" }, { "internalType": "uint256", "name": "userUnstakeTime30", "type": "uint256" }, { "internalType": "uint256", "name": "collectTime", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "address", "name": "_spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "_spender", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "collect", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }], "name": "collectTimeOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "dividend", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }], "name": "dividendsOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "dividendsOfPool", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "info", "outputs": [{ "internalType": "uint256", "name": "totalSupply", "type": "uint256" }, { "internalType": "uint256", "name": "totalStaked", "type": "uint256" }, { "internalType": "address", "name": "dev", "type": "address" }, { "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "eater", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "uint256", "name": "_tokens", "type": "uint256" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" }], "name": "stake", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "stakeCount", "outputs": [{ "internalType": "address[]", "name": "", "type": "address[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" }], "name": "stakedOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "stakedOfPool", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }, { "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalBurn", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalDev", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalDividends", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalStaked", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "_from", "type": "address" }, { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "uint256", "name": "_tokens", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "uint256", "name": "_tokens", "type": "uint256" }, { "internalType": "uint256", "name": "dayType", "type": "uint256" }], "name": "unstake", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }]
     window.onload = async () => {
-        if (typeof window.ethereum !== 'undefined') {
-            console.log('MetaMask is installed!');
-        } else {
-            //alert("MetaMask is not installed!")
-            return;
-        }
+      if (typeof window.ethereum !== 'undefined') {
+        console.log('MetaMask is installed!');
+      } else {
+        //alert("MetaMask is not installed!")
+        return;
+      }
 
-        var web3Provider;
-        if (window.ethereum) {
-            web3Provider = window.ethereum;
-            try {
-                await window.ethereum.enable();
-            } catch (error) {
-                console.error("User denied account access")
-            }
-        } else if (window.web3) {
-            web3Provider = window.web3.currentProvider;
-        } else {
-            web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      var web3Provider;
+      if (window.ethereum) {
+        web3Provider = window.ethereum;
+        try {
+          await window.ethereum.enable();
+        } catch (error) {
+          console.error("User denied account access")
         }
-        web3 = new Web3(web3Provider);
-        account = await web3.eth.getAccounts();
-        AOP = new web3.eth.Contract(AOPAbi, contractAddress);
+      } else if (window.web3) {
+        web3Provider = window.web3.currentProvider;
+      } else {
+        web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      }
+      web3 = new Web3(web3Provider);
+      account = await web3.eth.getAccounts();
+      AOP = new web3.eth.Contract(AOPAbi, contractAddress);
 
-        setInterval(async () => {
-            var info = await AOP.methods.allInfo(account[0]).call()
-            var balance = await AOP.methods.balanceOf(account[0]).call()
-            document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
-            document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
-            document.querySelector("#balance").innerText = (balance/ 1e18).toFixed(4);
-            document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
-            var userStake7=Number((info.userStake7 / 1e18).toFixed(4));
-            var userStake15=Number((info.userStake15 / 1e18).toFixed(4));
-            var userStake30=Number((info.userStake30 / 1e18).toFixed(4));
-            
-            var userTotalStaked=userStake7+userStake15+userStake30;
-            document.querySelector("#userTotalStaked").innerText = userTotalStaked
-            document.querySelector("#userStake7").innerText = userStake7;
-            document.querySelector("#userStake15").innerText = userStake15;
-            document.querySelector("#userStake30").innerText = userStake30;
-            getCountDown(info.collectTime);
-        }, 3000);
+      setInterval(async () => {
+        var info = await AOP.methods.allInfo(account[0]).call()
+        var balance = await AOP.methods.balanceOf(account[0]).call()
+        var stakedOfPools = await AOP.methods.stakedOfPool().call()
+
+        console.log(info)
+        console.log(balance)
+        console.log(stakedOfPools)
+
+        document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
+        document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
+        document.querySelector("#balance").innerText = (balance / 1e18).toFixed(4);
+        document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
+
+
+        var userStake7 = Number((info.userStake7 / 1e18).toFixed(4));
+        var userStake15 = Number((info.userStake15 / 1e18).toFixed(4));
+        var userStake30 = Number((info.userStake30 / 1e18).toFixed(4));
+
+        userStakes[7] = userStake7;
+        userStakes[15] = userStake15;
+        userStakes[30] = userStake30;
+
+        $("#userStaked").val(userStakes[dayType]);
+        var userStaked = userStake7 + userStake15 + userStake30;
+
+        document.querySelector("#userStake7").innerText = (stakedOfPools[0] / 1e18).toFixed(4);
+        document.querySelector("#userStake15").innerText = (stakedOfPools[1] / 1e18).toFixed(4);
+        document.querySelector("#userStake30").innerText = (stakedOfPools[2] / 1e18).toFixed(4);
+        getCountDown(info.collectTime);
+      }, 3000);
 
 
 
