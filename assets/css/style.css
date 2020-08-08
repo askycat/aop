@@ -3157,13 +3157,13 @@ span.statcounter {
 }
 
 .dayType:hover{
-	border-style: dotted !important;
+	border-style: double !important;
 	cursor: pointer;
 }
 
 .dayType.active{
 
-	border-style: dotted !important;
+	border-style: double !important;
 }
 
 .col-xs-1-5,
