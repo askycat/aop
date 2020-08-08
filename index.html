@@ -845,6 +845,12 @@ $(function ($) {
 
     dayType = $(".dayType.active").attr("day");
 
+     $(".dayType").on("click", function () {
+        $(".dayType").removeClass("active");
+        $(this).addClass("active");
+        dayType = $(this).attr("day");
+    });
+  
     $("#stake").on("click", function () {
         var stakeAmount = document.querySelector('#stakeAmount').value;
         if (stakeAmount < 50000) { alert("min amount:50000"); return; }
@@ -928,9 +934,7 @@ $(function ($) {
             document.querySelector("#userStake7").innerText = (info.userStake7 / 1e18).toFixed(4);
             document.querySelector("#userStake15").innerText = (info.userStake15 / 1e18).toFixed(4);
             document.querySelector("#userStake30").innerText = (info.userStake30 / 1e18).toFixed(4);
-            var collectTime = (info.collectTime / 1e18);
-
-            getCountDown(collectTime);
+            getCountDown(info.collectTime);
         }, 3000);
 
 
