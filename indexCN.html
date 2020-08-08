@@ -410,22 +410,25 @@
             <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">池子</h2>
           </div>
           <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.1s">
-                <h6>总质押 :</h6>
-                <p id="totalStaked" style="font-size:larger;">0.0000</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                <h6>总红利 :</h6>
-                <p id="totalDividends" style="font-size:larger;">0.0000</p>
+            <div class="col-md-12 hidden">
+              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                <h6>权益池总质押: <span id="totalStaked" style="font-size:larger;">0.0000</span></h6>
+                <div class="row p-3">
+                  <div class="col-lg-4  p-3 dayType border active" day="7">
+                    7天池:<p id="userStake7" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4  p-3 dayType border " day="15">
+                    15天池:<p id="userStake15" style="font-size:larger;">0.0000</p>
+                  </div>
+                  <div class="col-lg-4 p-3 dayType border" day="30">
+                    30天池:<p id="userStake30" style="font-size:larger;">0.0000</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-md-12 hidden">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>各权益池质押:</h6>
-
+                <h6>权益池总红利: <span id="totalDividends" style="font-size:larger;">0.0000</span></h6>
                 <div class="row p-3">
                   <div class="col-lg-4  p-3 dayType border active" day="7">
                     7天池:<p id="userStake7" style="font-size:larger;">0.0000</p>
@@ -480,10 +483,10 @@
             <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">奖励</h2>
           </div>
           <div class="tk_countdown text-center animation countdown_shape" data-animation="fadeInUp"
-            data-animation-delay="0.1s" style="margin-top: -20px;">
+            data-animation-delay="0.1s" style="margin-top: -3px;">
             <div class="tk_counter_inner">
               <h1 id="userdividends" class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
-                style="color: blanchedalmond;padding: 0rem;">0.0000</h1>
+                style="color: blanchedalmond;padding: 5rem;">0.0000</h1>
               <a href="javascript:void(0)" id="collect" class="btn btn-default">领取</a>
               <br />
               <span id="countDown1">&nbsp;</span>
@@ -647,8 +650,9 @@
 
     $(".dayType").on("click", function () {
       $(".dayType").removeClass("active");
-      $(this).addClass("active");
+      
       dayType = $(this).attr("day");
+      $(`[day="${dayType}"]`).addClass("active");
       $("#userStaked").val(userStakes[dayType]);
     });
 
