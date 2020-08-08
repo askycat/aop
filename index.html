@@ -546,25 +546,25 @@
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.1s">
                 <h6>Total Staked :</h6>
-                <p id="totalStaked" style="font-size:larger;">0.00</p>
+                <p id="totalStaked" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.2s">
                 <h6>Total Dividends :</h6>
-                <p id="totalDividends" style="font-size:larger;">0.00</p>
+                <p id="totalDividends" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                 <h6>Balance:</h6>
-                <p id="totalBurn" style="font-size:larger;">0.00</p>
+                <p id="totalBurn" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                 <h6>You staked :</h6>
-                <p id="userTotalStaked" style="font-size:larger;">0.00</p>
+                <p id="userTotalStaked" style="font-size:larger;">0.0000</p>
               </div>
             </div>
           
@@ -573,14 +573,14 @@
                 <h6>Days:</h6>
               <div class="row p-3">
                 <div class="col-lg-4  p-3 dayType" day="7" >
-                  7day:<p  id="userStake7" style="font-size:larger;">0.00</p>
+                  7day:<p  id="userStake7" style="font-size:larger;">0.0000</p>
                 </div> 
                 <div class="col-lg-4  p-3 dayType active" day="15">
-                  15day:<p id="userStake15" style="font-size:larger;">0.00</p>
+                  15day:<p id="userStake15" style="font-size:larger;">0.0000</p>
                 </div>
 
                 <div class="col-lg-4 p-3 dayType"  day="30">
-                  30day:<p  id="userStake30" style="font-size:larger;">0.00</p>
+                  30day:<p  id="userStake30" style="font-size:larger;">0.0000</p>
                 </div>
               </div>
               </div>
@@ -613,7 +613,7 @@
             data-animation-delay="0.1s" style="margin-top: -20px;">
             <div class="tk_counter_inner">
               <h1 id="userdividends" class="animation" data-animation="fadeInUp" data-animation-delay="0.2s"
-                style="color: blanchedalmond;padding: 0rem;">0.00</h1>
+                style="color: blanchedalmond;padding: 0rem;">0.0000</h1>
               <a href="javascript:void(0)" id="collect" class="btn btn-default">Rewards</a>
               <br/>
              <span id="countDown1">&nbsp;</span>
@@ -785,15 +785,19 @@ $(function ($) {
   
     $("#stake").on("click", function () {
         var stakeAmount = document.querySelector('#stakeAmount').value;
-        if (stakeAmount < 50000) { alert("min amount:50000"); return; }
+        if(!stakeAmount) return;
+        if ( stakeAmount < 50000) { alert("min amount:50000"); return; }
         AOP.methods.stake(web3.utils.toWei(stakeAmount), dayType).send({ from: account[0] });
     });
     $("#unstake").on("click", function () {
         var unStakeAmount = document.querySelector('#unStakeAmount').value;
+        if(!unStakeAmount) return;
         AOP.methods.unstake(web3.utils.toWei(unStakeAmount), dayType).send({ from: account[0] });
     });
 
     $("#collect").on("click", function () {
+      var rewards=$("#userdividends").val();
+      if(rewards<=0) { alert("rewards is 0.0000"); return; }
         AOP.methods.collect().send({ from: account[0] });
     });
 
