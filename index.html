@@ -651,7 +651,7 @@ var dayType;
       
       dayType = $(this).attr("day");
       $(`[day="${dayType}"]`).addClass("active");
-      $("#userStaked").val(userStakes[dayType]);
+      $("#userStaked").text(userStakes[dayType]);
     });
   
     $("#stake").on("click", function () {
@@ -756,7 +756,7 @@ var dayType;
         userStakes[15] = userStake15;
         userStakes[30] = userStake30;
 
-        $("#userStaked").val(userStakes[dayType]);
+        $("#text").val(userStakes[dayType]);
         var userStaked = userStake7 + userStake15 + userStake30;
 
         document.querySelector("#userStake7").innerText = (stakedOfPools[0] / 1e18).toFixed(4);
