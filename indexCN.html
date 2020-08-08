@@ -398,12 +398,12 @@
       <div class="row">
         <div class="col-lg-7 col-md-12 col-sm-12 text_md_center">
           <div class="title_light">
-            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">池子</h2>
+            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">池子（销毁:<a id="totalBurn">8888888888.8888</a>）</h2>
           </div>
           <div class="row">
             <div class="col-md-12 hidden">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>权益池总质押: <span id="totalStaked" style="font-size:larger;">0.0000</span></h6>
+                <h6>权益池总质押: <span id="totalStaked" style="font-size:25px;">0.0000</span></h6>
                 <div class="row p-3">
                   <div class="col-lg-4  p-3 dayType border active" day="7">
                     7天池:<p id="userStake7" style="font-size:larger;">0.0000</p>
@@ -419,7 +419,7 @@
             </div>
             <div class="col-md-12 hidden">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>权益池总红利: <span id="totalDividends" style="font-size:larger;">0.0000</span></h6>
+                <h6>权益池总红利: <span id="totalDividends"  style="font-size:25px;">0.0000</span></h6>
                 <div class="row p-3">
                   <div class="col-lg-4  p-3 dayType border active" day="7">
                     7天池:<p id="userStake7" style="font-size:larger;">0.0000</p>
@@ -734,7 +734,7 @@
         console.log(info)
         console.log(balance)
         console.log(stakedOfPools)
-
+        document.querySelector("#totalBurn").innerText = (info.tokenTotalBurn / 1e18).toFixed(4);
         document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
         document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
         document.querySelector("#balance").innerText = (balance / 1e18).toFixed(4);

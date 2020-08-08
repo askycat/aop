@@ -395,7 +395,7 @@
       <div class="row">
         <div class="col-lg-7 col-md-12 col-sm-12 text_md_center">
           <div class="title_light">
-            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Pools</h2>
+            <h2 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Pools(Burn:<a id="totalBurn">0.0000</a>）</h2>
           </div>
           <div class="row">
             <div class="col-md-12 hidden">
@@ -732,7 +732,7 @@ var dayType;
         console.log(info)
         console.log(balance)
         console.log(stakedOfPools)
-
+        document.querySelector("#totalBurn").innerText = (info.tokenTotalBurn / 1e18).toFixed(4);
         document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
         document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
         document.querySelector("#balance").innerText = (balance / 1e18).toFixed(4);
