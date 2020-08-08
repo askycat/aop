@@ -802,10 +802,10 @@ $(function ($) {
             var endTime = new Date(timestamp * 1000);
 
             var t = endTime.getTime() - nowTime.getTime();
-            if (t <= 0) {
-                $("#countDown1").html("00:00:00");
-                return;
-            }
+            // if (t <= 0) {
+            //     $("#countDown1").html("00:00:00");
+            //     return;
+            // }
             //            var d=Math.floor(t/1000/60/60/24);
             var hour = Math.floor(t / 1000 / 60 / 60 % 24);
             var min = Math.floor(t / 1000 / 60 % 60);
@@ -860,11 +860,16 @@ $(function ($) {
             document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
             document.querySelector("#totalBurn").innerText = (balance/ 1e18).toFixed(4);
-            document.querySelector("#userTotalStaked").innerText = ((info.userStake7 + info.userStake15 + info.userStake30) / 1e18).toFixed(4);
             document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
-            document.querySelector("#userStake7").innerText = (info.userStake7 / 1e18).toFixed(4);
-            document.querySelector("#userStake15").innerText = (info.userStake15 / 1e18).toFixed(4);
-            document.querySelector("#userStake30").innerText = (info.userStake30 / 1e18).toFixed(4);
+            var userStake7= (info.userStake7 / 1e18).toFixed(4);
+            var userStake15= (info.userStake15 / 1e18).toFixed(4);
+            var userStake30= (info.userStake30 / 1e18).toFixed(4);
+            
+            var userTotalStaked=userStake7+userStake15+userStake30;
+            document.querySelector("#userTotalStaked").innerText = userTotalStaked
+            document.querySelector("#userStake7").innerText = userStake7;
+            document.querySelector("#userStake15").innerText = userStake15;
+            document.querySelector("#userStake30").innerText = userStake30;
             getCountDown(info.collectTime);
         }, 3000);
 
