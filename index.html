@@ -422,7 +422,7 @@
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                 <h6>Balance:</h6>
-                <p id="totalBurn" style="font-size:larger;">0.0000</p>
+                <p id="balance" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -729,7 +729,7 @@ $(function ($) {
             var balance = await AOP.methods.balanceOf(account[0]).call()
             document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
-            document.querySelector("#totalBurn").innerText = (balance/ 1e18).toFixed(4);
+            document.querySelector("#balance").innerText = (balance/ 1e18).toFixed(4);
             document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
             var userStake7=Number((info.userStake7 / 1e18).toFixed(4));
             var userStake15=Number((info.userStake15 / 1e18).toFixed(4));

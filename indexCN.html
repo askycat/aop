@@ -442,13 +442,13 @@
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                 <h6>余额:</h6>
-                <p id="totalBurn" style="font-size:larger;">0.0000</p>
+                <p id="balance" style="font-size:larger;">0.0000</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                 <h6>你的质押 :</h6>
-                <p id="userTotalStaked" style="font-size:larger;">0.0000</p>
+                <p id="userStaked" style="font-size:larger;">0.0000</p>
               </div>
             </div>
 
@@ -649,7 +649,7 @@
       $(".dayType").removeClass("active");
       $(this).addClass("active");
       dayType = $(this).attr("day");
-      $("#userTotalStaked").val(userStakes[dayType]);
+      $("#userStaked").val(userStakes[dayType]);
     });
 
     $("#stake").on("click", function () {
@@ -742,7 +742,7 @@
 
         document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
         document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
-        document.querySelector("#totalBurn").innerText = (balance / 1e18).toFixed(4);
+        document.querySelector("#balance").innerText = (balance / 1e18).toFixed(4);
         document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
 
 
@@ -754,9 +754,8 @@
         userStakes[15] = userStake15;
         userStakes[30] = userStake30;
 
-        dayType = $(this).attr("day");
-        $("#userTotalStaked").val(userStakes[dayType]);
-        var userTotalStaked = userStake7 + userStake15 + userStake30;
+        $("#userStaked").val(userStakes[dayType]);
+        var userStaked = userStake7 + userStake15 + userStake30;
 
         document.querySelector("#userStake7").innerText = (stakedOfPools[0] / 1e18).toFixed(4);
         document.querySelector("#userStake15").innerText = (stakedOfPools[1] / 1e18).toFixed(4);
