@@ -415,6 +415,24 @@
                 <p id="totalDividends" style="font-size:larger;">0.0000</p>
               </div>
             </div>
+            <div class="col-md-12 hidden">
+              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                <h6>各权益池质押:</h6>
+                
+              <div class="row p-3">
+                <div class="col-lg-4  p-3 dayType" day="7" >
+                  7天池:<p  id="userStake7" style="font-size:larger;">0.0000</p>
+                </div> 
+                <div class="col-lg-4  p-3 dayType active" day="15">
+                  15天池:<p id="userStake15" style="font-size:larger;">0.0000</p>
+                </div>
+
+                <div class="col-lg-4 p-3 dayType"  day="30">
+                  30天池:<p  id="userStake30" style="font-size:larger;">0.0000</p>
+                </div>
+              </div>
+              </div>
+            </div>
             <div class="col-md-6 col-sm-12">
               <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                 <h6>余额:</h6>
@@ -428,23 +446,7 @@
               </div>
             </div>
           
-            <div class="col-md-12 hidden">
-              <div class="pr_box animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                <h6>期限:</h6>
-              <div class="row p-3">
-                <div class="col-lg-4  p-3 dayType" day="7" >
-                  7day:<p  id="userStake7" style="font-size:larger;">0.0000</p>
-                </div> 
-                <div class="col-lg-4  p-3 dayType active" day="15">
-                  15day:<p id="userStake15" style="font-size:larger;">0.0000</p>
-                </div>
-
-                <div class="col-lg-4 p-3 dayType"  day="30">
-                  30day:<p  id="userStake30" style="font-size:larger;">0.0000</p>
-                </div>
-              </div>
-              </div>
-            </div>
+           
             <div class="col-md-6 col-sm-12">
               <div class="newsletter_form newslattter_small">
                 <form class="animation" data-animation="fadeInUp" data-animation-delay="0.3s">
@@ -722,19 +724,22 @@ $(function ($) {
         setInterval(async () => {
             var info = await AOP.methods.allInfo(account[0]).call()
             var balance = await AOP.methods.balanceOf(account[0]).call()
+            var stakedOfPools=  await AOP.methods.stakedOfPools().call()
             document.querySelector("#totalStaked").innerText = (info.tokenTotalStaked / 1e18).toFixed(4);
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
             document.querySelector("#totalBurn").innerText = (balance/ 1e18).toFixed(4);
             document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
+           
+           
             var userStake7=Number((info.userStake7 / 1e18).toFixed(4));
             var userStake15=Number((info.userStake15 / 1e18).toFixed(4));
             var userStake30=Number((info.userStake30 / 1e18).toFixed(4));
             
             var userTotalStaked=userStake7+userStake15+userStake30;
             document.querySelector("#userTotalStaked").innerText = userTotalStaked
-            document.querySelector("#userStake7").innerText = userStake7;
-            document.querySelector("#userStake15").innerText = userStake15;
-            document.querySelector("#userStake30").innerText = userStake30;
+            document.querySelector("#userStake7").innerText = (stakedOfPools[0]/1e18).toFixed(4);
+            document.querySelector("#userStake15").innerText = (stakedOfPools[1]/1e18).toFixed(4);
+            document.querySelector("#userStake30").innerText = (stakedOfPools[2]/1e18).toFixed(4);
             getCountDown(info.collectTime);
         }, 3000);
 
