@@ -615,7 +615,7 @@
                 style="color: blanchedalmond;padding: 0rem;">0.00</h1>
               <a href="javascript:void(0)" id="collect" class="btn btn-default">Rewards</a>
               <br/>
-             time remaining : <span id="countDown1"></span>
+             <span id="countDown1"></span>
             </div>
           </div>
         </div>
@@ -773,7 +773,7 @@
 var dayType;
 
 $(function ($) {
-
+    $("#collect").addClass("disabled");
     dayType = $(".dayType.active").attr("day");
 
      $(".dayType").on("click", function () {
@@ -800,12 +800,12 @@ $(function ($) {
         setInterval(function () {
             var nowTime = new Date();
             var endTime = new Date(timestamp * 1000);
-
+         
             var t = endTime.getTime() - nowTime.getTime();
-            // if (t <= 0) {
-            //     $("#countDown1").html("00:00:00");
-            //     return;
-            // }
+            if (t <= 0) {
+                $("#collect").removeClass("disabled");
+                return;
+            }
             //            var d=Math.floor(t/1000/60/60/24);
             var hour = Math.floor(t / 1000 / 60 / 60 % 24);
             var min = Math.floor(t / 1000 / 60 % 60);
@@ -821,7 +821,7 @@ $(function ($) {
                 sec = "0" + sec;
             }
             var countDownTime = hour + ":" + min + ":" + sec;
-            $("#countDown1").html(countDownTime);
+            $("#countDown1").html("time remaining : "+countDownTime);
 
         }, 1000);
     }
