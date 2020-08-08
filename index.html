@@ -419,13 +419,13 @@
                 <h6>TOTAL DIVIDENDS: <span id="totalDividends" style="font-size:larger;">0.0000</span></h6>
                 <div class="row p-3">
                   <div class="col-lg-4  p-3 dayType border active" day="7">
-                    7days:<p id="userStake7" style="font-size:larger;">0.0000</p>
+                    7days:<p id="dividends7" style="font-size:larger;">0.0000</p>
                   </div>
                   <div class="col-lg-4  p-3 dayType border " day="15">
-                    15days:<p id="userStake15" style="font-size:larger;">0.0000</p>
+                    15days:<p id="dividends15" style="font-size:larger;">0.0000</p>
                   </div>
                   <div class="col-lg-4 p-3 dayType border" day="30">
-                    30days:<p id="userStake30" style="font-size:larger;">0.0000</p>
+                    30days:<p id="dividends30" style="font-size:larger;">0.0000</p>
                   </div>
                 </div>
               </div>
@@ -728,6 +728,7 @@ var dayType;
         var info = await AOP.methods.allInfo(account[0]).call()
         var balance = await AOP.methods.balanceOf(account[0]).call()
         var stakedOfPools = await AOP.methods.stakedOfPool().call()
+        var dividendsOfPools = await AOP.methods.dividendsOfPool().call()
 
         console.log(info)
         console.log(balance)
@@ -753,6 +754,10 @@ var dayType;
         document.querySelector("#userStake7").innerText = (stakedOfPools[0] / 1e18).toFixed(4);
         document.querySelector("#userStake15").innerText = (stakedOfPools[1] / 1e18).toFixed(4);
         document.querySelector("#userStake30").innerText = (stakedOfPools[2] / 1e18).toFixed(4);
+
+        document.querySelector("#dividends7").innerText = (dividendsOfPools[0] / 1e18).toFixed(4);
+        document.querySelector("#dividends15").innerText = (dividendsOfPools[1] / 1e18).toFixed(4);
+        document.querySelector("#dividends30").innerText = (dividendsOfPools[2] / 1e18).toFixed(4);
         getCountDown(info.collectTime);
       }, 8000);
 
