@@ -426,7 +426,6 @@
                 <div class="col-lg-4  p-3 dayType " day="15">
                   15天池:<p id="userStake15" style="font-size:larger;">0.0000</p>
                 </div>
-
                 <div class="col-lg-4 p-3 dayType"  day="30">
                   30天池:<p  id="userStake30" style="font-size:larger;">0.0000</p>
                 </div>
@@ -631,6 +630,7 @@
 </body>
 <script>
 var dayType;
+var userStakes=[];
 
 $(function ($) {
     $("#collect").addClass("disabled");
@@ -640,6 +640,7 @@ $(function ($) {
         $(".dayType").removeClass("active");
         $(this).addClass("active");
         dayType = $(this).attr("day");
+        $("#userStakes").val(userStakes[dayType]);
     });
   
     $("#stake").on("click", function () {
@@ -740,6 +741,10 @@ $(function ($) {
             var userStake15=Number((info.userStake15 / 1e18).toFixed(4));
             var userStake30=Number((info.userStake30 / 1e18).toFixed(4));
             
+            userStakes[7]=userStake7;
+            userStakes[15]=userStake15;
+            userStakes[30]=userStake30;
+
             var userTotalStaked=userStake7+userStake15+userStake30;
             document.querySelector("#userTotalStaked").innerText = userTotalStaked
             document.querySelector("#userStake7").innerText = (stakedOfPools[0]/1e18).toFixed(4);
