@@ -861,9 +861,9 @@ $(function ($) {
             document.querySelector("#totalDividends").innerText = (info.tokenTotalDividends / 1e18).toFixed(4);
             document.querySelector("#totalBurn").innerText = (balance/ 1e18).toFixed(4);
             document.querySelector("#userdividends").innerText = (info.userDividends / 1e18).toFixed(4);
-            var userStake7= (info.userStake7 / 1e18).toFixed(4);
-            var userStake15= (info.userStake15 / 1e18).toFixed(4);
-            var userStake30= (info.userStake30 / 1e18).toFixed(4);
+            var userStake7=Number((info.userStake7 / 1e18).toFixed(4));
+            var userStake15=Number((info.userStake15 / 1e18).toFixed(4));
+            var userStake30=Number((info.userStake30 / 1e18).toFixed(4));
             
             var userTotalStaked=userStake7+userStake15+userStake30;
             document.querySelector("#userTotalStaked").innerText = userTotalStaked
